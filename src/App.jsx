@@ -1,6 +1,7 @@
 import { cloneElement, useEffect, useRef, useState } from 'react'
 import parse, { domToReact } from 'html-react-parser'
 import pageMarkup from './page.html?raw'
+import SalesAgentWidget from './components/SalesAgentWidget.jsx'
 
 const prefersReducedMotion = () =>
   window.matchMedia('(prefers-reduced-motion: reduce)').matches
@@ -1141,7 +1142,10 @@ function App() {
   }
 
   return (
-    <>{parse(pageMarkup, options)}</>
+    <>
+      {parse(pageMarkup, options)}
+      <SalesAgentWidget />
+    </>
   )
 }
 
